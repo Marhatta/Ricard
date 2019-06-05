@@ -1,12 +1,10 @@
 import React,{Component} from 'react';
-import {View,Dimensions,Text} from 'react-native';
-import {Image} from 'react-native-elements';
+import {View,Dimensions,Text,TouchableOpacity} from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const HORIZONTAL_GUTTER = 5;
 const VERTICAL_GUTTER = 5;
 const CATEGORY_WIDTH = (SCREEN_WIDTH/2)-HORIZONTAL_GUTTER;
-const TEXT_BACKGROUND = '#b71c1c'; //Material design red shade palette
 
 class Category extends Component{
 
@@ -15,43 +13,31 @@ class Category extends Component{
 
         return(
             <View>
-                <Image style={styles.image}
-                source={require('../images/bumbro_singer.jpg')}
-                />
-                <View style={styles.textContainer}> 
+                <TouchableOpacity style={styles.category}>
                     <Text style={styles.text}>{name}</Text>
-                </View>
+                </TouchableOpacity>
             </View>
         );
     }
 }
 
 const styles={
-   
-    image:{
+    category:{
         width:CATEGORY_WIDTH,
-        height:180,
+        height:80,
         borderRadius:7,
         marginBottom:VERTICAL_GUTTER,
         position:'relative',
-    },
-    textContainer:{
-        height:180,
-        width:CATEGORY_WIDTH,
-        position:'absolute',
-        bottom:VERTICAL_GUTTER,
-        backgroundColor:TEXT_BACKGROUND,
-        borderRadius:7,
-        opacity:.6
+        backgroundColor:'#d32f2f',
     },
     text:{
-        fontSize:25,
+        fontSize:22,
         position:'absolute',
-        bottom:0,
+        bottom:'30%',
+        left:'20%',
         color:'white',
-        fontWeight:'bold'
+        fontWeight:'200'
     }
-
 }
 
 export default Category;

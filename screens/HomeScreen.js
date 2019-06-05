@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 import Header from '../components/Header'; 
 import Categories from '../components/Categories'; 
-import {View,Text,TouchableOpacity} from 'react-native';
+import SectionHeader from '../components/SectionHeader';
+import RecentlyPlayed from '../components/RecentlyPlayed';
+import {ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class HomeScreen extends Component{
@@ -12,39 +14,18 @@ class HomeScreen extends Component{
 
     render(){
         return(
-            <View>
+            <ScrollView>
                 <Header /> 
-                 <View style={styles.textContainer}>
-                    <Text style={styles.categories}>Categories</Text>
-                    <TouchableOpacity style={styles.viewAll}>
-                        <Text>View All</Text>
-                    </TouchableOpacity>
-                </View>
+                <SectionHeader left='Recently Played' right='View all' />
+                <RecentlyPlayed />
+                 <SectionHeader left='Categories' right='View All' />
                 <Categories />               
-            </View>
+            </ScrollView>
         );
                 
     }
 }
 
-const styles={
-
-    textContainer:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        marginTop:40,
-
-    },
-    categories:{
-        fontSize:28,
-        fontWeight:'bold',
-        color:'black',
-    },
-    viewAll:{
-        justifyContent:'flex-end',
-        marginRight:5
-    }
-}
 
 
 export default HomeScreen;
