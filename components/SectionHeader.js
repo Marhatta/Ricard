@@ -21,7 +21,8 @@ const styles={
     textContainer:{
         flexDirection:'row',
         justifyContent:'space-between',
-        marginTop:40,
+        marginTop:30,
+        marginBottom:5
 
     },
     categories:{

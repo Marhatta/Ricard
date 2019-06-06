@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {View,Dimensions,Text,TouchableOpacity} from 'react-native';
 
+
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const HORIZONTAL_GUTTER = 5;
 const VERTICAL_GUTTER = 5;

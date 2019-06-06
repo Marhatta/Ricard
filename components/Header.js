@@ -1,26 +1,26 @@
 import React ,{Component} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {View,Dimensions,Text} from 'react-native';
+import {View,Image} from 'react-native';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
 
 class Header extends Component{
     render(){
         return(
             <View style={styles.header}>
 
-                    <View>
-                       <Text style={styles.logo}>Ricard</Text>
-                    </View>
+                   <Image
+                    style={styles.logo}
+                    source={require('../images/logo.jpg')} 
+                    />
                     
-                    <View style={styles.icons}>
+                    {/* <View style={styles.icons}>
                         <View style={styles.icon}>
                         <Icon 
                         name='bars'
                         size={30}
                         />
                         </View>
-                    </View>
+                    </View> */}
              </View>
         );
     }
@@ -33,13 +33,14 @@ const styles = {
         flexDirection:'row',
         justifyContent:'space-between',
     },
+    logo:{
+        marginTop:5,
+        marginLeft:5
+    },
     icons:{
         flexDirection:'row',
         justifyContent:'flex-end',  
         marginTop:7 
-    },
-    logo:{
-        fontSize:25
     },
     icon:{
         fontSize:25,
